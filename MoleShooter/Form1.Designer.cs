@@ -1,6 +1,6 @@
 ﻿namespace MoleShooter
 {
-    partial class Form1
+    partial class moleShooter
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,19 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            timerGameLoop = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
-            // Form1
+            // timerGameLoop
+            // 
+            timerGameLoop.Tick += timerGameLoop_Tick;
+            // 
+            // moleShooter
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.background;
             ClientSize = new Size(782, 403);
-            Name = "Form1";
+            DoubleBuffered = true;
+            Name = "moleShooter";
             Text = "MoleShooter";
+            MouseMove += moleShooter_MouseMove;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timerGameLoop;
     }
 }
